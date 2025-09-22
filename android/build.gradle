@@ -4,28 +4,13 @@ version '2.0.0'
 
 apply plugin: 'com.android.library'
 
-def localProperties = new Properties()
-def localPropertiesFile = rootProject.file('local.properties')
-if (localPropertiesFile.exists()) {
-    localPropertiesFile.withReader('UTF-8') { reader ->
-        localProperties.load(reader)
-    }
-}
-
-def flutterRoot = localProperties.getProperty('flutter.sdk')
-if (flutterRoot == null) {
-    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
-}
-
-apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle" // This line gives you access to flutter.compileSdkVersion, etc.
-
 android {
     namespace 'io.flutterfastkit.fk_user_agent'
 
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 36
 
     defaultConfig {
-        minSdkVersion flutter.minSdkVersion
+        minSdkVersion 16
     }
 
     lint {
