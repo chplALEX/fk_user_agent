@@ -1,7 +1,8 @@
 .DS_Store
 .dart_tool/
-
-.packages
+.fvm/
+.fvmrc
+.idea/
+.packages/
 .pub/
-
 build/
